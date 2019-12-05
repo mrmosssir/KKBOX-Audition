@@ -1,0 +1,65 @@
+.releases {
+  width: 100%;
+  min-height: 100vh;
+  background: $main;
+  padding: 30px 0;
+  margin-left: 210px;
+  margin-right: 298px;
+  hr {
+    margin: 16px 0;
+  }
+  &-category {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    li {
+      color: white;
+      border: 1px solid white;
+      border-radius: 50px;
+      padding: 8px 16px;
+      cursor: pointer;
+      margin-right: 16px;
+      margin-bottom: 8px;
+      &:hover {
+        background: $secondary;
+      }
+    }
+  }
+  &-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &-item {
+    width: 160px;
+    margin-bottom: 16px;
+    * {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    & > img {
+      cursor: pointer;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: normal;
+      color: white;
+    }
+    .releases-artist {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+      img {
+        border-radius: 50%;
+        margin-right: 8px;
+      }
+      p {
+        color: white;
+      }
+    }
+  }
+  &-link {
+    position: relative;
+  }
+}
