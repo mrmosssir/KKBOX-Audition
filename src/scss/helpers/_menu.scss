@@ -1,0 +1,37 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 210px;
+  background: $secondary;
+  &-content {
+    padding: 30px 36px;
+    height: calc(100vh - 43px);
+    h1 {
+      color: $clean-blue-dark;
+      margin-bottom: 24px;
+    }
+    small {
+      display: block;
+      font-size: 12px;
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+    .menu-select {
+      li {
+        margin-bottom: 24px;
+        cursor: pointer;
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+  &-setting {
+    padding: 12px;
+    box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.25);
+    color: white;
+  }
+}

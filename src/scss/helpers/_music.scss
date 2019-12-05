@@ -1,0 +1,11 @@
+.music-frame {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: $main;
+}
+
+.player {
+  height: 100vh;
+  border-width: 0px;
+}
