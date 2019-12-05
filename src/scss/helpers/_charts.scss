@@ -1,0 +1,103 @@
+.charts {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px 0px;
+  margin-left: 210px;
+  margin-right: 298px;
+  hr {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  &-category {
+    display: flex;
+    justify-content: flex-start;
+    li {
+      color: white;
+      border: 1px solid white;
+      border-radius: 50px;
+      padding: 8px 16px;
+      cursor: pointer;
+      margin-right: 16px;
+      &:hover {
+        background: $secondary;
+      }
+    }
+  }
+  &-group {
+    display: none;
+    border: 1px solid gray;
+    margin-bottom: 16px;
+  }
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $secondary;
+    border-bottom: 1px solid gray;
+    padding: 16px 24px;
+    h2 {
+      font-size: 24px;
+      font-weight: normal;
+      color: white;
+    }
+    p {
+      color: $clean-blue-dark;
+    }
+    button {
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      border-radius: 50%;
+      &:hover {
+        border-color: $clean-blue-dark;
+        color: $clean-blue-dark;
+      }
+    }
+  }
+  &-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 8px 0px;
+    .charts-top1to5, .charts-top6to10 {
+      width: 50%;
+    }
+    .charts-item {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 80px;
+      margin: 16px 0px;
+      color: white;
+      span {
+        font-size: 18px;
+      }
+      .charts-content {
+        height: 100%;
+        width: 184px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-bottom: 1px solid gray;
+        h2 {
+          font-size: 16px;
+          font-weight: normal;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        p {
+          font-size: 14px;
+          overflow:hidden;
+          text-overflow:ellipsis;
+          white-space:nowrap;
+        }
+      }
+    }
+  }
+  &-link {
+    position: relative;
+  }
+}

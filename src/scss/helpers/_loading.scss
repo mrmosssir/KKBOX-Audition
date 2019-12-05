@@ -1,0 +1,62 @@
+.loading {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+.loading-frame {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  p {
+    color: $clean-blue-dark;
+    font-size: 18px;
+    margin-top: 16px;
+  }
+}
+.loading-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  border: 5px solid $clean-blue-light;
+  animation: turn 2s linear infinite;
+}
+.loading-icon span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: $clean-blue-light;
+  position: absolute;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  animation: changeBgColor 2s linear infinite;
+}
+@keyframes changeBgColor {
+  0% {
+    background: $clean-blue-light;
+  }
+  100% {
+    background: $clean-blue-dark;
+  }
+}
+@keyframes turn {
+  0% {
+    transform: rotate(0deg);
+    border-color: $clean-blue-light;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-color: $clean-blue-dark;
+  }
+}
