@@ -1,3 +1,3 @@
-// module.exports = {
-//     publicPath: '/KKBOX-Audition/dist/'
-// }
+module.exports = {
+    publicPath: '/KKBOX-Audition/dist/'
+}
