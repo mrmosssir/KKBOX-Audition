@@ -30,7 +30,6 @@ export default new Vuex.Store({
       context.commit('LOADING', true);
       const config = {
         headers: {
-          Accept: 'application/x-www-form-urlencoded',
           'Content-Type': 'application/x-www-form-urlencoded',
         },
       };
@@ -39,7 +38,7 @@ export default new Vuex.Store({
         client_id: '8afffb410fe1c9388565fe00c9429cb6',
         client_secret: '122b64ea1a6079b2dd93479406a9b715',
       };
-      axios.post(`${process.env.VUE_APP_CORS}/${process.env.VUE_APP_TOKENPATH}`, qs.stringify(oauth), config)
+      axios.post(`${process.env.VUE_APP_CORS}?url=${process.env.VUE_APP_TOKENPATH}`, qs.stringify(oauth), config)
         .then((Response) => {
           if (Response.status === 200) {
             context.commit('TOKEN', {
@@ -58,11 +57,11 @@ export default new Vuex.Store({
           Authorization: context.state.token,
         },
       };
-      axios.get(`${process.env.VUE_APP_CORS}/${process.env.VUE_APP_APIPATH}/charts?territory=TW`, config)
+      axios.get(`${process.env.VUE_APP_CORS}?url=${process.env.VUE_APP_APIPATH}/charts?territory=TW`, config)
         .then((Response) => {
           context.commit('CHARTS', Response.data.data);
           this.state.charts.forEach((chart) => {
-            axios.get(`${process.env.VUE_APP_CORS}/${process.env.VUE_APP_APIPATH}/charts/${chart.id}?territory=TW`, config)
+            axios.get(`${process.env.VUE_APP_CORS}?url=${process.env.VUE_APP_APIPATH}/charts/${chart.id}?territory=TW`, config)
               .then((res) => {
                 context.commit('CHARTSINFO', res);
               });
@@ -76,7 +75,7 @@ export default new Vuex.Store({
         },
       };
       if (this.state.token !== '') {
-        axios.get(`${process.env.VUE_APP_CORS}/${process.env.VUE_APP_APIPATH}/new-release-categories?territory=TW`, config)
+        axios.get(`${process.env.VUE_APP_CORS}?url=${process.env.VUE_APP_APIPATH}/new-release-categories?territory=TW`, config)
           .then((Response) => {
             context.commit('RELEASES', Response.data.data);
           });
@@ -89,7 +88,7 @@ export default new Vuex.Store({
           Authorization: context.state.token,
         },
       };
-      axios.get(`${process.env.VUE_APP_CORS}/${process.env.VUE_APP_APIPATH}/new-release-categories/${payload}/albums?territory=TW&limit=500`, config)
+      axios.get(`${process.env.VUE_APP_CORS}?url=${process.env.VUE_APP_APIPATH}/new-release-categories/${payload}/albums?territory=TW&limit=500`, config)
         .then((Response) => {
           context.commit('RELEASESGROUP', Response.data.data);
           context.commit('LOADING', false);
@@ -102,7 +101,7 @@ export default new Vuex.Store({
           Authorization: context.state.token,
         },
       };
-      axios.get(`${process.env.VUE_APP_CORS}/${process.env.VUE_APP_APIPATH}/search?q=${payload.content}&type=${payload.type}&territory=TW`, config)
+      axios.get(`${process.env.VUE_APP_CORS}?url=${process.env.VUE_APP_APIPATH}/search?q=${payload.content}&type=${payload.type}&territory=TW`, config)
         .then((Response) => {
           switch (payload.type) {
             case 'track':
